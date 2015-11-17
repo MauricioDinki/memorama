@@ -1,0 +1,50 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #FF9F59;
+}
+h1, p {
+  display: block;
+  text-align: left;
+  margin-left: 30px;
+  color: #000;
+}
+a {
+  text-decoration: none;
+  color: blue;
+}
+
+p {
+  font-size: 20px
+}
+#div_win {
+  display: none;
+}
+.big-paraph{
+  display: block;
+  text-align: center;
+  font-size: 35px;
+  padding-top: 20px
+}
+.center-block{
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+.win-image {
+  padding-top: 22px;
+}
+.btn {
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  position: relative;
+  width: 200px;
+  height: 25px;
+  text-align: center;
+  margin-top: 10px;
+}

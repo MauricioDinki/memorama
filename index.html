@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Memorama</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/master.css" media="screen" title="no title" charset="utf-8">
+    <script type="text/javascript" src="js/script.js"></script>
+  </head>
+  <body onload="iniciar()" id="body">
+    <div id="div_game">
+      <canvas id="canvas" width="1070" height="300">
+        Tu navegador no soporta html5 :(
+      </canvas>
+      <h1>
+        Juego de Memoria por <a target="_blank" href="https://github.com/mauriciodinki">@Mauriciodinki</a>
+      </h1>
+      <p>
+        Nombre: <span id='player_name'></span>
+      </p>
+      <p>
+        Pares Encontrados: <span id='counter'></span>
+      </p>
+      <p>
+        Numero de intentos: <span id='trys'></span>
+      </p>
+    </div>
+    <div id="div_win">
+      <p class="center-block big-paraph">
+        Felicidades <span id="win_player_name"></span> has ganado en <span id='win_trys'></span> tiros
+      </p>
+      <a class="btn center-block" href=".">Volver a jugar</a>
+      <img class="center-block win-image" width="900" height="500" src="img/win.gif" alt="You Win" />
+    </div>
+  </body>
+</html>
