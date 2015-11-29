@@ -346,3 +346,13 @@ function iniciar() {
   document.getElementById('player_name').innerHTML = player_name
 
 }
+
+function chooseCard() {
+  console.log('Hola');
+}
+$(function () {
+  var $canvas =  $('#game-canvas');
+  var ctx = $canvas[0].getContext('2d');
+  $canvas.click(chooseCard);
+
+});
