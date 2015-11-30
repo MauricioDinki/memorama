@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Play Configuration</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/master.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center">Configuration</h1>
+      <form>
+        <h3 id="game-confh" class="subtitle-click">
+          <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+          Game configuration
+        </h3>
+        <div id="game-config">
+          <div class="form-group">
+            <label for="use_name">Player Name</label>
+            <input type="text" class="form-control" id="use_name">
+          </div>
+          <div class="form-group inline-block">
+            <div class="slideThree inline-block">
+            	<input type="checkbox" value="None" id="check-timer" name="check" />
+            	<label for="check-timer"></label>
+            </div>
+            <span class="check-label">Show Timer</span>
+          </div>
+          <div class="form-group inline-block">
+            <div class="slideThree inline-block">
+            	<input type="checkbox" value="None" id="check-attempts" name="check" />
+            	<label for="check-attempts"></label>
+            </div>
+            <span class="check-label">Show Attempts</span>
+          </div>
+          <div class="form-group inline-block">
+            <div class="slideThree inline-block">
+            	<input type="checkbox" value="None" id="check-hits" name="check" />
+            	<label for="check-hits"></label>
+            </div>
+            <span class="check-label">Show Hits</span>
+          </div>
+        </div>
+        <h3 id="card-confh" class="subtitle-click">
+          <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+          Card configuration
+        </h3>
+        <div id="card-config">
+          <div class="form-group">
+            <label for="card-color">Color</label>
+            <input type="color" class="form-control" id="card-color">
+          </div>
+          <div class="form-group">
+            <div class="slideThree inline-block">
+            	<input type="checkbox" value="None" id="image-check" name="check" />
+            	<label for="image-check"></label>
+            </div>
+            <span class="check-label">Use Image</span>
+          </div>
+          <div class="form-group">
+            <label for="web-image">Image link</label>
+            <input type="url" class="form-control" id="web-image" disabled="true">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="../js/form-events.js" charset="utf-8"></script>
+</html>
