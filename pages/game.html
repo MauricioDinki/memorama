@@ -8,31 +8,35 @@
   </head>
   <body>
     <div id="app-game">
-      <div class="loader"></div>
-      <canvas id="canvas" width="1350" height="400">
-        Tu navegador no soporta html5 :(
-      </canvas>
-      <div class="game-status">
-        <p>
-          <span class="label-stat">Player Name: </span>
-          <span class="label-cont" id="name-box"></span>
-        </p>
-        <p>
-          <span class="label-stat">Attempts: </span>
-          <span class="label-cont" id="attempt-box">0</span>
-        </p>
-        <p>
-          <span class="label-stat">Hits: </span>
-          <span class="label-cont" id="hit-box">0</span>
-        </p>
-        <p>
-          <span class="label-stat">Time: </span>
-          <span class="label-cont" id="clock">00 : 00 : 00</span>
-        </p>
+      <div class="game-cards">
+        <div id="overlay" class="loader"></div>
+        <canvas id="canvas" width="1350" height="400">
+          Tu navegador no soporta html5 :(
+        </canvas>
       </div>
-      <div class="game-buttons">
-        <button type="button" class="btn btn-primary btn-lg " id="btn-start">Start</button>
-        <button type="button" class="btn btn-primary btn-lg " id="btn-restart">Restart</button>
+      <div class="game-status">
+        <div class="stats">
+          <p>
+            <span class="label-stat">Player Name: </span>
+            <span class="label-cont" id="name-box"></span>
+          </p>
+          <p>
+            <span class="label-stat">Attempts: </span>
+            <span class="label-cont" id="attempt-box">0</span>
+          </p>
+          <p>
+            <span class="label-stat">Hits: </span>
+            <span class="label-cont" id="hit-box">0</span>
+          </p>
+          <p>
+            <span class="label-stat">Time: </span>
+            <span class="label-cont" id="clock">00 : 00 : 00</span>
+          </p>
+        </div>
+        <div class="game-buttons">
+          <button type="button" class="btn btn-primary btn-lg " id="btn-start">Start</button>
+          <button type="button" class="btn btn-primary btn-lg " id="btn-restart">Restart</button>
+        </div>
       </div>
     </div>
     <div id="win-screen">
