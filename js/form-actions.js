@@ -2,6 +2,8 @@ $(function() {
 
   var $form = $('.container').find('form');
   var settings = {}
+  var $color_input = $('.container').find('#card-color');
+  var $link_image = $('.container').find('#link-image');
 
   if (localStorage.settings) {
     initial = JSON.parse(localStorage.settings)
@@ -12,6 +14,14 @@ $(function() {
     $('form').find('#card-color').val(initial.color)
     $('form').find('#image-check').prop('checked', initial.use_image);
     $('form').find('#link-image').val(initial.image)
+
+    if (initial.use_image) {
+      $color_input.attr({'disabled': true,});
+      $link_image.attr({'disabled': false,});
+    } else {
+      $color_input.attr({'disabled': false,});
+      $link_image.attr({'disabled': true,});
+    }
   }
 
   /**

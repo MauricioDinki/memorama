@@ -15,7 +15,6 @@ $(function() {
     } else {
       $color_input.attr({'disabled': false,});
       $link_image.attr({'disabled': true,});
-      $link_image.val('');
     }
   });
   $card_confh.click(function(event) {

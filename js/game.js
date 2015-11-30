@@ -3,44 +3,45 @@
 **/
 
 var player_name = 'Gamer';
-var name_box = $('#app-game').find('#name-box');
-var show_attempts = true;
-var attempt_box = $('#app-game').find('#attempt-box');
-var attempts = 0;
-var show_hits =  true
-var hit_box = $('#app-game').find('#hit-box');
-var hits = 0;
-var show_timer = true;
-var btn_start = $('#app-game').find('#btn-start');
-var btn_restart = $('#app-game').find('#btn-restart');
-var canvas_width = 900;
-var canvas_height = 400;
-var ctx;
-var use_image = false;
-var card_back = "#000";
-var table_color = "#fff";
-var deck = [];
-var first_card_x_pos = 30;
-var first_card_y_pos = 50;
-first_coincidence = true;
-first_card = -1;
-var margin = 33;
-var card_width = 100;
-var card_height = 150;
-var equal;
-var time_out;
-var pairs = [
-  ["../img/n1.jpg","../img/v1.jpg"],
-  ["../img/n2.jpg","../img/v2.jpg"],
-  ["../img/n1.jpg","../img/v1.jpg"],
-  ["../img/n2.jpg","../img/v2.jpg"],
-  ["../img/n3.jpg","../img/v3.jpg"],
-  ["../img/n4.jpg","../img/v4.jpg"],
-  ["../img/n5.jpg","../img/v5.jpg"],
-  ["../img/fondo.jpg","../img/fondo.jpg"],
-  ["../img/girl.png","../img/girl.png"],
+    name_box = $('body').find('#name-box, #wname-box');
+    show_attempts = true;
+    attempt_box = $('body').find('#attempt-box, #wattempt-box');
+    attempts = 0;
+    show_hits =  true
+    hit_box = $('body').find('#hit-box, #whit-box');
+    hits = 0;
+    show_timer = true;
+    btn_start = $('#app-game').find('#btn-start');
+    btn_restart = $('#btn-restart, #wbtn-restart');
+    canvas_width = 900;
+    canvas_height = 400;
+    ctx = '' ;
+    use_image = false;
+    card_back = "#000";
+    table_color = "#fff";
+    deck = [];
+    first_card_x_pos = 30;
+    first_card_y_pos = 50;
+    first_coincidence = true;
+    first_card = -1;
+    margin = 33;
+    card_width = 100;
+    card_height = 150;
+    equal = false;
+    time_out = 0;
+    pairs = [
+  // ["../img/n1.jpg","../img/v1.jpg"],
+  // ["../img/n2.jpg","../img/v2.jpg"],
+  // ["../img/n1.jpg","../img/v1.jpg"],
+  // ["../img/n2.jpg","../img/v2.jpg"],
+  // ["../img/n3.jpg","../img/v3.jpg"],
+  // ["../img/n4.jpg","../img/v4.jpg"],
+  // ["../img/n5.jpg","../img/v5.jpg"],
+  // ["../img/fondo.jpg","../img/fondo.jpg"],
+  // ["../img/girl.png","../img/girl.png"],
   ["../img/gambit.jpg","../img/gambit.jpg"],
 ]
+
 if (localStorage.settings) {
   var settings = JSON.parse(localStorage.settings)
   player_name = settings.name;
@@ -233,13 +234,9 @@ function flipback() {
     deck[first_card].is_loked = true;
     deck[second_card].is_loked = true;
 	}
-  // if (counter == pairs.length) {
-  //   console.log("Has ganado");
-  //   document.getElementById('div_game').style.display = "none";
-  //   document.getElementById('div_win').style.display = "block";
-  //   document.getElementById('win_player_name').innerHTML = player_name;
-  //   document.getElementById('win_trys').innerHTML = trys;
-  // }
+  if (hits == pairs.length) {
+    winner();
+  }
 }
 
 function cronometer() {
@@ -261,18 +258,48 @@ function time() {
   if (cs < 10) {cs = "0" + cs;}
   if (sg < 10) {sg = "0" + sg;}
   if (mn < 10) {mn = "0" + mn;}
-  $('#app-game').find('#clock').html(mn+" : "+sg+" : "+cs)
+  $('body').find('#clock, #wclock').html(mn+" : "+sg+" : "+cs)
 }
 
+function show_all () {
+  for (var i = 0; i < deck.length; i++) {
+    var card = deck[i];
+    ctx.drawImage(
+      card.img,
+      card.position_x,
+      card.position_y,
+      card.card_width,
+      card.card_height
+    );
+  }
+}
+
+function winner() {
+  $('#app-game').remove()
+  $('#win-screen').show();
+  clearInterval(begin);
+}
+
+btn_start.one( "click", function() {
+  show_all()
+  hide = setTimeout(function () {
+    for (var i = 0; i < deck.length; i++) {
+      var card = deck[i];
+      card.draw();
+    }
+    cronometer()
+  },2000);
+  canvas.addEventListener('click', choose, false);
+  $(this).attr({'disabled': true,});
+});
+
+btn_restart.click(function() {
+  window.location.reload();
+});
+
 $( window ).load(function() {
+  name_box.html(player_name);
   canvas = document.getElementById('canvas');
   ctx = canvas.getContext('2d');
   make_deck();
-  shuffle_cards();
-  name_box.html(player_name);
-});
-
-btn_start.click(function(event) {
-  canvas.addEventListener('click', choose, false);
-  cronometer()
 });

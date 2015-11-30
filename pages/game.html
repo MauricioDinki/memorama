@@ -9,7 +9,7 @@
   <body>
     <div id="app-game">
       <div class="inline-block">
-        <canvas id="canvas" width="1360" height="400">
+        <canvas id="canvas" width="1350" height="400">
           Tu navegador no soporta html5 :(
         </canvas>
       </div>
@@ -35,6 +35,25 @@
         <button type="button" class="btn btn-primary btn-lg " id="btn-start">Start</button>
         <button type="button" class="btn btn-primary btn-lg " id="btn-restart">Restart</button>
       </div>
+    </div>
+    <div id="win-screen">
+      <h1>Congratulation <span id="wname-box"></span> You're a winner</h1>
+      <div class="results">
+        <p class="inline-block">
+          <span class="label-stat">Attempts: </span>
+          <span class="label-cont" id="wattempt-box">0</span>
+        </p>
+        <p class="inline-block">
+          <span class="label-stat">Hits: </span>
+          <span class="label-cont" id="whit-box">0</span>
+        </p>
+        <p class="inline-block">
+          <span class="label-stat">Time: </span>
+          <span class="label-cont" id="wclock">00 : 00 : 00</span>
+        </p>
+      </div>
+      <button type="button" class="btn btn-primary btn-lg " id="wbtn-restart">Restart</button>
+      <img class="" width="800" height="450" src="../img/win.gif" alt="You Win" />
     </div>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
