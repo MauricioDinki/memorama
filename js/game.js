@@ -317,4 +317,5 @@ $( window ).load(function() {
   ctx = canvas.getContext('2d');
   make_deck();
   shuffle_cards();
+  $('.loader').remove()
 });
