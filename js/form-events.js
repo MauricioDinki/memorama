@@ -1,7 +1,8 @@
 $(function() {
+
   var $image_check = $('.container').find('#image-check');
   var $color_input = $('.container').find('#card-color');
-  var $web_image = $('.container').find('#web-image');
+  var $link_image = $('.container').find('#link-image');
   var $card_confh = $('.container').find('#card-confh');
   var $card_config = $('.container').find('#card-config');
   var $game_confh = $('.container').find('#game-confh');
@@ -10,10 +11,11 @@ $(function() {
   $image_check.click(function(event) {
     if ($image_check.is(':checked')) {
       $color_input.attr({'disabled': true,});
-      $web_image.attr({'disabled': false,});
+      $link_image.attr({'disabled': false,});
     } else {
       $color_input.attr({'disabled': false,});
-      $web_image.attr({'disabled': true,});
+      $link_image.attr({'disabled': true,});
+      $link_image.val('');
     }
   });
   $card_confh.click(function(event) {
