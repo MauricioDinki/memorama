@@ -2,35 +2,30 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Memorama</title>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/master.css" media="screen" title="no title" charset="utf-8">
-    <!-- <script type="text/javascript" src="js/script.js"></script> -->
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/master.css" media="screen" title="no title" charset="utf-8">
   </head>
-  <body onload="iniciar()" id="body">
-    <div id="div_game">
-      <canvas id="canvas" width="1070" height="300">
-        Tu navegador no soporta html5 :(
-      </canvas>
-      <h1>
-        Juego de Memoria por <a target="_blank" href="https://github.com/mauriciodinki">@Mauriciodinki</a>
-      </h1>
-      <p>
-        Nombre: <span id='player_name'></span>
+  <body>
+    <div class="container" id="app-index">
+      <h1>Welcome to the Game</h1>
+      <p id="welcome-message">
+        Probably this is your first time playing, so maybe you want to make a little config to the game
       </p>
-      <p>
-        Pares Encontrados: <span id='counter'></span>
-      </p>
-      <p>
-        Numero de intentos: <span id='trys'></span>
-      </p>
-    </div>
-    <div id="div_win">
-      <p class="center-block big-paraph">
-        Felicidades <span id="win_player_name"></span> has ganado en <span id='win_trys'></span> tiros
-      </p>
-      <a class="btn center-block" href=".">Volver a jugar</a>
-      <img class="center-block win-image" width="900" height="500" src="img/win.gif" alt="You Win" />
+      <a class="btn btn-primary btn-lg btn-block" href="pages/conf.html">
+        Configuration
+      </a>
+      <a class="btn btn-primary btn-lg btn-block" href="pages/game.html">
+        Play the game
+      </a>
     </div>
   </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript">
+    if (!localStorage.settings) {
+      msg = $('#welcome-message');
+      msg.show();
+
+    }
+  </script>
 </html>

@@ -77,6 +77,26 @@
   text-align: center;
 }
 
+#app-index {
+  text-align: center;
+}
+
+#app-index a {
+  width: 60%;
+  margin: 50px auto;
+  display: block;
+}
+
+#app-index a:last-child {
+  margin-top: 50px;
+}
+
+#welcome-message {
+  display: none;
+  argin: 25px;
+  font-size: 1.5em;
+}
+
 /**
 * Checkbox Styles
 **/

@@ -30,17 +30,17 @@ var player_name = 'Gamer';
     equal = false;
     time_out = 0;
     pairs = [
-  // ["../img/n1.jpg","../img/v1.jpg"],
-  // ["../img/n2.jpg","../img/v2.jpg"],
-  // ["../img/n1.jpg","../img/v1.jpg"],
-  // ["../img/n2.jpg","../img/v2.jpg"],
-  // ["../img/n3.jpg","../img/v3.jpg"],
-  // ["../img/n4.jpg","../img/v4.jpg"],
-  // ["../img/n5.jpg","../img/v5.jpg"],
-  // ["../img/fondo.jpg","../img/fondo.jpg"],
-  // ["../img/girl.png","../img/girl.png"],
-  ["../img/gambit.jpg","../img/gambit.jpg"],
-]
+      ["../img/n1.jpg","../img/v1.jpg"],
+      ["../img/n2.jpg","../img/v2.jpg"],
+      ["../img/n1.jpg","../img/v1.jpg"],
+      ["../img/n2.jpg","../img/v2.jpg"],
+      ["../img/n3.jpg","../img/v3.jpg"],
+      ["../img/n4.jpg","../img/v4.jpg"],
+      ["../img/n5.jpg","../img/v5.jpg"],
+      ["../img/fondo.jpg","../img/fondo.jpg"],
+      ["../img/girl.png","../img/girl.png"],
+      ["../img/gambit.jpg","../img/gambit.jpg"],
+    ]
 
 if (localStorage.settings) {
   var settings = JSON.parse(localStorage.settings)
@@ -302,4 +302,5 @@ $( window ).load(function() {
   canvas = document.getElementById('canvas');
   ctx = canvas.getContext('2d');
   make_deck();
+  shuffle_cards();
 });
