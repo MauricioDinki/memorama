@@ -2,7 +2,8 @@
 * Global vars
 **/
 
-var player_name;
+var player_name = 'Gamer';
+var name_box = $('#app-game').find('#name-box');
 var show_attempts = true;
 var attempt_box = $('#app-game').find('#attempt-box');
 var attempts = 0;
@@ -10,6 +11,8 @@ var show_hits =  true
 var hit_box = $('#app-game').find('#hit-box');
 var hits = 0;
 var show_timer = true;
+var btn_start = $('#app-game').find('#btn-start');
+var btn_restart = $('#app-game').find('#btn-restart');
 var canvas_width = 900;
 var canvas_height = 400;
 var ctx;
@@ -208,15 +211,12 @@ function flipback() {
       }
     }
     attempts ++;
-    console.log(attempts);
-    // trys_object.innerHTML = trys;
+    attempt_box.html(attempts);
 	} else {
     attempts ++;
-    console.log(attempts);
-    hits ++;
-    console.log(hits);
-    // counter_object.innerHTML = counter;
-    // trys_object.innerHTML = trys;
+    attempt_box.html(attempts);
+    hits++;
+    hit_box.html(hits);
 	  ctx.fillStyle = table_color;
     ctx.fillRect(
       deck[first_card].position_x,
@@ -242,10 +242,37 @@ function flipback() {
   // }
 }
 
+function cronometer() {
+  initial = new Date()
+  begin = setInterval(time, 10);
+}
+
+function time() {
+  actual = new Date()
+  cro = actual - initial
+  cr = new Date()
+  cr.setTime(cro)
+  cs = cr.getMilliseconds()
+  cs = cs / 10;
+  cs = Math.round(cs)
+  sg = cr.getSeconds();
+  mn = cr.getMinutes();
+  ho = cr.getHours()-1;
+  if (cs < 10) {cs = "0" + cs;}
+  if (sg < 10) {sg = "0" + sg;}
+  if (mn < 10) {mn = "0" + mn;}
+  $('#app-game').find('#clock').html(mn+" : "+sg+" : "+cs)
+}
+
 $( window ).load(function() {
   canvas = document.getElementById('canvas');
   ctx = canvas.getContext('2d');
-  canvas.addEventListener('click', choose, false);
   make_deck();
   shuffle_cards();
+  name_box.html(player_name);
+});
+
+btn_start.click(function(event) {
+  canvas.addEventListener('click', choose, false);
+  cronometer()
 });
