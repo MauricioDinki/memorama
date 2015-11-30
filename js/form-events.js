@@ -8,6 +8,14 @@ $(function() {
   var $game_confh = $('.container').find('#game-confh');
   var $game_config = $('.container').find('#game-config');
 
+  if ($image_check.is(':checked')) {
+    $color_input.attr({'disabled': true,});
+    $link_image.attr({'disabled': false,});
+  } else {
+    $color_input.attr({'disabled': false,});
+    $link_image.attr({'disabled': true,});
+  }
+
   $image_check.click(function(event) {
     if ($image_check.is(':checked')) {
       $color_input.attr({'disabled': true,});

@@ -2,6 +2,10 @@
 * Form Styles
 **/
 
+#play-link{
+  margin-top: 10px;
+}
+
 .glyphicon {
   font-size: 20px
 }
@@ -23,7 +27,7 @@
   position: absolute;
   text-align: center;
   width: 100%;
-  bottom: 10%;
+  bottom: 1%;
 }
 
 
@@ -56,6 +60,11 @@
   margin: 0 30px;
 }
 
+.game2conf{
+  width: 30%;
+  margin: 20px auto;
+  text-align: center;
+}
 
 #win-screen {
   display: none;
