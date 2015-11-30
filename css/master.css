@@ -27,7 +27,7 @@
   position: absolute;
   text-align: center;
   width: 100%;
-  bottom: 1%;
+  top: 410px;
 }
 
 
@@ -61,9 +61,10 @@
 }
 
 .game2conf{
-  width: 30%;
+  width: 50%;
   margin: 20px auto;
   text-align: center;
+  text-overflow: clip;
 }
 
 #win-screen {

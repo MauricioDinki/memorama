@@ -30,16 +30,16 @@ var player_name = 'Gamer';
     equal = false;
     time_out = 0;
     pairs = [
-      ["../img/n1.jpg","../img/v1.jpg"],
-      ["../img/n2.jpg","../img/v2.jpg"],
-      ["../img/n1.jpg","../img/v1.jpg"],
-      ["../img/n2.jpg","../img/v2.jpg"],
-      ["../img/n3.jpg","../img/v3.jpg"],
-      ["../img/n4.jpg","../img/v4.jpg"],
-      ["../img/n5.jpg","../img/v5.jpg"],
-      ["../img/fondo.jpg","../img/fondo.jpg"],
-      ["../img/girl.png","../img/girl.png"],
-      ["../img/gambit.jpg","../img/gambit.jpg"],
+      ["../img/1.jpg","../img/1.jpg"],
+      ["../img/2.jpg","../img/2.jpg"],
+      ["../img/3.jpg","../img/3.jpg"],
+      ["../img/4.jpg","../img/4.jpg"],
+      ["../img/5.jpg","../img/5.jpg"],
+      ["../img/6.jpg","../img/6.jpg"],
+      ["../img/7.jpg","../img/7.jpg"],
+      ["../img/8.jpg","../img/8.jpg"],
+      ["../img/9.jpg","../img/9.jpg"],
+      ["../img/10.jpg","../img/10.jpg"],
     ]
 
 /**
