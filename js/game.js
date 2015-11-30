@@ -312,10 +312,13 @@ btn_restart.click(function() {
 });
 
 $( window ).load(function() {
-  name_box.html(player_name);
   canvas = document.getElementById('canvas');
   ctx = canvas.getContext('2d');
   make_deck();
   shuffle_cards();
   $('.loader').remove()
+});
+
+$(document).ready(function() {
+  name_box.html(player_name);
 });
