@@ -50,5 +50,7 @@ $(function() {
 
     localStorage.settings = JSON.stringify(game_settings);
 
+    $("#success-alert").show().fadeOut(1500);
+
   });
 });
