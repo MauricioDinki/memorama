@@ -42,6 +42,10 @@ var player_name = 'Gamer';
       ["../img/gambit.jpg","../img/gambit.jpg"],
     ]
 
+/**
+* Load local storage settings
+**/
+
 if (localStorage.settings) {
   var settings = JSON.parse(localStorage.settings)
   player_name = settings.name;
@@ -53,9 +57,19 @@ if (localStorage.settings) {
   } else {
     card_back = settings.color;
   }
+
   show_hits = settings.show_hits;
+  if (!show_hits) {
+    hit_box.parent('p').remove()
+  }
   show_attempts = settings.show_attempts;
+  if (!show_attempts) {
+    attempt_box.parent('p').remove()
+  }
   show_timer = settings.show_timer;
+  if (!show_timer) {
+    $('body').find('#clock, #wclock').parent('p').remove()
+  }
 }
 
 function Card (position_x, position_y, card_width, card_height, img, info, is_selected, is_loked) {
